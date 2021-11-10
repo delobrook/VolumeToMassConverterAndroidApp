@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">VolumeToMassConverter</string>
+    <string name="app_title"> Volume To Mass Converter</string>
+    <string name="choose_liquid"> Type of liquid:</string>
+    <string name="choose_volume"> Unit of Volume:</string>
+    <string name="choose_mass"> Unit of Mass:</string>
+    <string name="enter_volume"> Enter volume</string>
+
+    <string-array name="liquids">
+        <item>   Water</item>
+        <item>   Petrol</item>
+        <item>   Blood</item>
+    </string-array>
+    <string-array name="convert_from">
+        <item>   Litres</item>
+        <item>     Pints</item>
+    </string-array>
+    <string-array name="convert_to">
+        <item>   Kilograms</item>
+        <item>    Pounds</item>
+    </string-array>
+</resources>

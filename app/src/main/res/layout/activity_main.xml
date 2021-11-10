@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="liquid"
+            type="String" />
+        <variable
+            name="convertFrom"
+            type="String" />
+        <variable
+            name="convertTo"
+            type="String" />
+        <variable
+            name="volume"
+            type="double" />
+        <variable
+            name="mass"
+            type="double" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E0FFFF"
+        tools:context=".MainActivity">
+
+        <EditText
+            android:id="@+id/volumeEditTextNumber"
+            android:layout_width="202dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="72dp"
+            android:ems="10"
+            android:hint="@string/enter_volume"
+            android:inputType="number"
+            android:text="@{Double.toString(volume)}"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/unitOfVolumelabel" />
+
+        <ImageButton
+            android:id="@+id/convertimageButton"
+            android:layout_width="78dp"
+            android:layout_height="67dp"
+            android:background="@color/teal_700"
+            app:layout_constraintBottom_toTopOf="@+id/unitOfMassSpinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/volumeEditTextNumber"
+            app:srcCompat="@android:drawable/ic_popup_sync" />
+
+        <Spinner
+            android:id="@+id/typeOfLiquidSpinner"
+            android:layout_width="215sp"
+            android:layout_height="47sp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.724"
+            app:layout_constraintStart_toEndOf="@+id/typeOfLiquidLabel"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <Spinner
+            android:id="@+id/unitofVolumeSpinner"
+            android:layout_width="215dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.627"
+            app:layout_constraintStart_toEndOf="@+id/unitOfVolumelabel"
+            app:layout_constraintTop_toBottomOf="@+id/typeOfLiquidSpinner" />
+
+        <Spinner
+            android:id="@+id/unitOfMassSpinner"
+            android:layout_width="215dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="128dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.741"
+            app:layout_constraintStart_toEndOf="@+id/unitOfMassLabel"
+            app:layout_constraintTop_toBottomOf="@+id/volumeUnit" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_title"
+            android:textColor="@color/black"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/typeOfLiquidLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="48dp"
+            android:text="@string/choose_liquid"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <TextView
+            android:id="@+id/unitOfVolumelabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="48dp"
+            android:text="@string/choose_volume"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/typeOfLiquidLabel" />
+
+        <TextView
+            android:id="@+id/unitOfMassLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="128dp"
+            android:text="@string/choose_mass"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/volumeEditTextNumber" />
+
+        <TextView
+            android:id="@+id/resultMassTextView"
+            android:layout_width="222dp"
+            android:layout_height="82dp"
+            android:layout_marginStart="88dp"
+            android:text="@{Double.toString(mass)}"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/unitOfMassLabel"
+            app:layout_constraintVertical_bias="0.522" />
+
+        <TextView
+            android:id="@+id/resultMassUnit"
+            android:layout_width="74dp"
+            android:layout_height="42dp"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/resultMassTextView"
+            app:layout_constraintTop_toBottomOf="@+id/unitOfMassSpinner"
+            app:layout_constraintVertical_bias="0.478" />
+
+        <TextView
+            android:id="@+id/volumeUnit"
+            android:layout_width="66dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="68dp"
+            android:text="TextView"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/volumeEditTextNumber"
+            app:layout_constraintTop_toBottomOf="@+id/unitofVolumeSpinner" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
