@@ -29,6 +29,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         activityMainBinding= DataBindingUtil.setContentView(this,R.layout.activity_main);
 
+        try
+        {
+            this.getSupportActionBar().hide();
+        }
+        catch (NullPointerException e){}
         Spinner typeOfLiquidSpinner=activityMainBinding.typeOfLiquidSpinner;
         ArrayAdapter<CharSequence> typeOfLiquidSpinnerAdapter= ArrayAdapter.createFromResource(this,R.array.liquids, android.R.layout.simple_spinner_item);
         typeOfLiquidSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
